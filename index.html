@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for navbar links and hover effects */
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #4CAF50;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #4CAF50;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Navbar logo hover effect */
+        .navbar-logo {
+            transition: color 0.3s ease;
+        }
+
+        .navbar-logo:hover {
+            color: #4CAF50;
+        }
+
+        /* Mobile menu styles */
+        .mobile-menu-item {
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-item:hover {
+            color: #4CAF50;
+            transform: translateX(10px);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 p-4 shadow-lg">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <div class="text-white text-2xl font-bold navbar-logo">
+                <a href="#">Jannat</a>
+            </div>
+
+            <!-- Navbar Links (Middle part) -->
+            <div class="hidden lg:flex space-x-6 text-lg font-medium">
+                <a href="#" class="text-white nav-link">Home</a>
+                <a href="#" class="text-white nav-link">About</a>
+                <a href="#" class="text-white nav-link">Services</a>
+                <a href="#" class="text-white nav-link">Contact</a>
+            </div>
+
+            <!-- Portfolio Section (Right part) -->
+            <div class="hidden lg:block text-white">
+                <a href="#portfolio" class="text-lg font-medium">Portfolio</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="block lg:hidden">
+                <button id="menu-toggle" class="text-white focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="lg:hidden hidden bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white p-4">
+        <a href="#" class="block py-2 mobile-menu-item">Home</a>
+        <a href="#" class="block py-2 mobile-menu-item">About</a>
+        <a href="#" class="block py-2 mobile-menu-item">Services</a>
+        <a href="#" class="block py-2 mobile-menu-item">Contact</a>
+        <a href="#portfolio" class="block py-2 mobile-menu-item">Portfolio</a>
+    </div>
+<!-- Font Awesome (add in <head> once) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <section id="about" class="py-24 bg-black text-white relative z-10">
+      <div class="max-w-screen-xl mx-auto px-6 sm:px-12 lg:px-24 flex flex-col lg:flex-row items-center gap-16">
+    
+        <!-- Left Side: Image with Modern Sharp Frame -->
+        <div class="w-full lg:w-1/2 flex justify-center lg:justify-start pr-2 lg:pr-12">
+          <div class="relative w-[320px] h-[420px] group perspective">
+            <!-- Unique Geometric Frame -->
+            <div class="clip-unique-frame p-[5px] animate-pulse">
+              <div class="overflow-hidden bg-white">
+                <img src="c:\Users\WALTON\Desktop\images 7777.jpg" alt="Your photo" class="w-full h-full object-cover transform transition duration-500 group-hover:scale-105">
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Right Side: Text Content -->
+        <div class="w-full lg:w-1/2 flex flex-col justify-center items-start italic pl-2 lg:pl-6">
+          <h2 class="text-5xl font-extrabold mb-6 animate__animated animate__fadeInUp tracking-wide italic text-yellow-400">About Me</h2>
+          <p class="text-lg lg:text-xl leading-relaxed mb-8 opacity-90 hover:opacity-100 transition duration-300 max-w-2xl italic text-gray-200">
+            I am a passionate and dedicated web developer with a strong focus on creating beautiful, responsive, and user-friendly websites.
+            I have a deep understanding of web technologies and a keen interest in building scalable web applications. I’m constantly improving my skills
+            and exploring new frameworks to provide the best results for my clients.
+          </p>
+    
+          <!-- Feature Boxes with Icons -->
+          <div class="flex flex-col sm:flex-row gap-6 mt-6 italic">
+            <div class="bg-white text-gray-800 p-6 rounded-xl shadow-xl hover:scale-105 transition-transform duration-300 w-full sm:w-64">
+              <h4 class="font-semibold text-xl mb-2 flex items-center gap-2 italic text-blue-600">
+                <i class="fas fa-code"></i> Web Development
+              </h4>
+              <p class="text-sm italic text-gray-700">I specialize in creating dynamic, interactive websites using the latest web technologies.</p>
+            </div>
+            <div class="bg-white text-gray-800 p-6 rounded-xl shadow-xl hover:scale-105 transition-transform duration-300 w-full sm:w-64">
+              <h4 class="font-semibold text-xl mb-2 flex items-center gap-2 italic text-purple-600">
+                <i class="fas fa-palette"></i> Creative Design
+              </h4>
+              <p class="text-sm italic text-gray-700">I have a keen eye for aesthetics and design, ensuring that every website I create is visually stunning.</p>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    </section>
+    
+    <!-- Custom CSS for Unique Geometric Frame -->
+    <style>
+      /* Adds unique angular, asymmetric frame */
+      .clip-unique-frame {
+        clip-path: polygon(
+          0% 0%,   /* top-left */
+          90% 0%,  /* top-right */
+          100% 20%, /* right-top slant */
+          100% 80%, /* right-bottom slant */
+          90% 100%, /* bottom-right */
+          10% 100%, /* bottom-left */
+          0% 80%   /* left-bottom slant */
+        );
+      }
+    
+      .perspective {
+        perspective: 1000px;
+      }
+    </style>
+  
+  </div>
+</section>
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-100 text-center">
+        <h2 class="text-4xl font-bold text-gray-800 mb-6">Skills</h2>
+
+        <div class="max-w-4xl mx-auto">
+
+            <!-- Frontend Development -->
+            <div class="mb-10">
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 text-lg">
+
+                    <!-- Skill 1: HTML5 -->
+                    <div
+                        class="bg-white text-gray-800 p-6 rounded-lg shadow-md hover:bg-indigo-600 hover:text-white transition-all">
+                        <h3 class="font-semibold text-xl mb-2">HTML5</h3>
+                        <p class="text-sm mb-4">Structuring web content with semantic markup.</p>
+                        <div class="relative pt-1">
+                            <div class="flex mb-2 items-center justify-between">
+                                <span
+                                    class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full bg-blue-200 text-blue-700">90%</span>
+                            </div>
+                            <div class="flex mb-4">
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 2: CSS3 -->
+                    <div
+                        class="bg-white text-gray-800 p-6 rounded-lg shadow-md hover:bg-indigo-600 hover:text-white transition-all">
+                        <h3 class="font-semibold text-xl mb-2">CSS3</h3>
+                        <p class="text-sm mb-4">Styling web pages with modern CSS techniques.</p>
+                        <div class="relative pt-1">
+                            <div class="flex mb-2 items-center justify-between">
+                                <span
+                                    class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full bg-purple-200 text-purple-700">85%</span>
+                            </div>
+                            <div class="flex mb-4">
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-purple-600 h-2.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 3: JavaScript (ES6+) -->
+                    <div
+                        class="bg-white text-gray-800 p-6 rounded-lg shadow-md hover:bg-indigo-600 hover:text-white transition-all">
+                        <h3 class="font-semibold text-xl mb-2">JavaScript (ES6+)</h3>
+                        <p class="text-sm mb-4">Enhancing interactivity and functionality of websites.</p>
+                        <div class="relative pt-1">
+                            <div class="flex mb-2 items-center justify-between">
+                                <span
+                                    class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full bg-yellow-200 text-yellow-700">80%</span>
+                            </div>
+                            <div class="flex mb-4">
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-yellow-500 h-2.5 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 4: Bootstrap 5 -->
+                    <div
+                        class="bg-white text-gray-800 p-6 rounded-lg shadow-md hover:bg-indigo-600 hover:text-white transition-all">
+                        <h3 class="font-semibold text-xl mb-2">Bootstrap 5</h3>
+                        <p class="text-sm mb-4">Responsive design with the latest version of Bootstrap.</p>
+                        <div class="relative pt-1">
+                            <div class="flex mb-2 items-center justify-between">
+                                <span
+                                    class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full bg-orange-200 text-orange-700">85%</span>
+                            </div>
+                            <div class="flex mb-4">
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-orange-600 h-2.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 5: Tailwind CSS -->
+                    <div
+                        class="bg-white text-gray-800 p-6 rounded-lg shadow-md hover:bg-indigo-600 hover:text-white transition-all">
+                        <h3 class="font-semibold text-xl mb-2">Tailwind CSS</h3>
+                        <p class="text-sm mb-4">Building custom designs with utility-first CSS framework.</p>
+                        <div class="relative pt-1">
+                            <div class="flex mb-2 items-center justify-between">
+                                <span
+                                    class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full bg-blue-200 text-blue-700">95%</span>
+                            </div>
+                            <div class="flex mb-4">
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 1: Node.js -->
+                    <div
+                        class="bg-white text-gray-800 p-6 rounded-lg shadow-md hover:bg-indigo-600 hover:text-white transition-all">
+                        <h3 class="font-semibold text-xl mb-2">Node.js</h3>
+                        <p class="text-sm mb-4">Building scalable backend applications using Node.js.</p>
+                        <div class="relative pt-1">
+                            <div class="flex mb-2 items-center justify-between">
+                                <span
+                                    class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full bg-green-200 text-green-700">75%</span>
+                            </div>
+                            <div class="flex mb-4">
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-green-600 h-2.5 rounded-full" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Skill 2: JSON -->
+                    <div
+                        class="bg-white text-gray-800 p-6 rounded-lg shadow-md hover:bg-indigo-600 hover:text-white transition-all">
+                        <h3 class="font-semibold text-xl mb-2">JSON</h3>
+                        <p class="text-sm mb-4">Working with data interchange format JSON for APIs.</p>
+                        <div class="relative pt-1">
+                            <div class="flex mb-2 items-center justify-between">
+                                <span
+                                    class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full bg-teal-200 text-teal-700">80%</span>
+                            </div>
+                            <div class="flex mb-4">
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 1: Git -->
+                    <div
+                        class="bg-white text-gray-800 p-6 rounded-lg shadow-md hover:bg-indigo-600 hover:text-white transition-all">
+                        <h3 class="font-semibold text-xl mb-2">Git</h3>
+                        <p class="text-sm mb-4">Version control for tracking changes and collaboration.</p>
+                        <div class="relative pt-1">
+                            <div class="flex mb-2 items-center justify-between">
+                                <span
+                                    class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full bg-red-200 text-red-700">85%</span>
+                            </div>
+                            <div class="flex mb-4">
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-red-600 h-2.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 2: GitHub -->
+                    <div
+                        class="bg-white text-gray-800 p-6 rounded-lg shadow-md hover:bg-indigo-600 hover:text-white transition-all">
+                        <h3 class="font-semibold text-xl mb-2">GitHub</h3>
+                        <p class="text-sm mb-4">Collaborative coding and version control with GitHub.</p>
+                        <div class="relative pt-1">
+                            <div class="flex mb-2 items-center justify-between">
+                                <span
+                                    class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full bg-purple-200 text-purple-700">80%</span>
+                            </div>
+                            <div class="flex mb-4">
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-purple-600 h-2.5 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 1: Font Awesome -->
+                    <div
+                        class="bg-white text-gray-800 p-6 rounded-lg shadow-md hover:bg-indigo-600 hover:text-white transition-all">
+                        <h3 class="font-semibold text-xl mb-2">Font Awesome</h3>
+                        <p class="text-sm mb-4">Using scalable vector icons for web interfaces.</p>
+                        <div class="relative pt-1">
+                            <div class="flex mb-2 items-center justify-between">
+                                <span
+                                    class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full bg-yellow-200 text-yellow-700">80%</span>
+                            </div>
+                            <div class="flex mb-4">
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-yellow-500 h-2.5 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="py-20 bg-gradient-to-br from-white via-indigo-100 to-teal-100 px-4">
+        <div class="max-w-7xl mx-auto">
+          <h2 class="text-5xl font-bold text-center text-gray-800 mb-16 hover:text-teal-600 transition duration-300">My Projects</h2>
+      
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- Project Template Start -->
+            <!-- Just copy & change content below for each project -->
+      
+            <!-- Weather App -->
+            <div class="group relative p-6 bg-white rounded-3xl shadow-xl hover:shadow-2xl transform transition hover:scale-105">
+              <div class="absolute top-0 right-0 p-3">
+                <span class="text-xs font-semibold text-blue-600 bg-blue-100 px-3 py-1 rounded-full">JavaScript</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-blue-600">Weather App</h3>
+              <p class="text-sm text-gray-600 mb-2">HTML, CSS, JS</p>
+              <p class="text-gray-700 mb-4">Displays live weather by city using an API.</p>
+              <div class="flex gap-4 text-sm font-medium">
+                <a href="https://ecommerce-p771.github.io/Weather-converted/" class="text-blue-600 hover:underline">Live</a>
+                <a href="https://github.com/Ecommerce-p771/Weather-converted" class="text-blue-600 hover:underline">GitHub</a>
+              </div>
+            </div>
+      
+            <!-- To-Do List -->
+            <div class="group relative p-6 bg-white rounded-3xl shadow-xl hover:shadow-2xl transform transition hover:scale-105">
+              <div class="absolute top-0 right-0 p-3">
+                <span class="text-xs font-semibold text-purple-600 bg-purple-100 px-3 py-1 rounded-full">Productivity</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-purple-600">To-Do List</h3>
+              <p class="text-sm text-gray-600 mb-2">HTML, CSS, JS</p>
+              <p class="text-gray-700 mb-4">Task management app for productivity.</p>
+              <div class="flex gap-4 text-sm font-medium">
+                <a href="https://ecommerce-p771.github.io/To-Do-list/" class="text-purple-600 hover:underline">Live</a>
+                <a href="https://github.com/Ecommerce-p771/To-Do-list" class="text-purple-600 hover:underline">GitHub</a>
+              </div>
+            </div>
+      
+            <!-- YouTube Clone -->
+            <div class="group relative p-6 bg-white rounded-3xl shadow-xl hover:shadow-2xl transform transition hover:scale-105">
+              <div class="absolute top-0 right-0 p-3">
+                <span class="text-xs font-semibold text-red-600 bg-red-100 px-3 py-1 rounded-full">Clone</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-red-600">YouTube Clone</h3>
+              <p class="text-sm text-gray-600 mb-2">HTML, CSS, JS</p>
+              <p class="text-gray-700 mb-4">Video streaming site clone with basic functionality.</p>
+              <div class="flex gap-4 text-sm font-medium">
+                <a href="https://ecommerce-p771.github.io/Project2/" class="text-red-600 hover:underline">Live</a>
+                <a href="https://github.com/Ecommerce-p771/Project2" class="text-red-600 hover:underline">GitHub</a>
+              </div>
+            </div>
+      
+            <!-- Facebook Clone -->
+            <div class="group relative p-6 bg-white rounded-3xl shadow-xl hover:shadow-2xl transform transition hover:scale-105">
+              <div class="absolute top-0 right-0 p-3">
+                <span class="text-xs font-semibold text-blue-500 bg-blue-100 px-3 py-1 rounded-full">Clone</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-blue-500">Facebook Clone</h3>
+              <p class="text-sm text-gray-600 mb-2">HTML, CSS, JS</p>
+              <p class="text-gray-700 mb-4">Social media platform clone with user authentication.</p>
+              <div class="flex gap-4 text-sm font-medium">
+                <a href="https://ecommerce-p771.github.io/projkect-1/" class="text-blue-500 hover:underline">Live</a>
+                <a href="https://github.com/Ecommerce-p771/projkect-1" class="text-blue-500 hover:underline">GitHub</a>
+              </div>
+            </div>
+      
+            <!-- Shopping Website -->
+            <div class="group relative p-6 bg-white rounded-3xl shadow-xl hover:shadow-2xl transform transition hover:scale-105">
+              <div class="absolute top-0 right-0 p-3">
+                <span class="text-xs font-semibold text-green-600 bg-green-100 px-3 py-1 rounded-full">E-commerce</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-green-600">Shopping Website</h3>
+              <p class="text-sm text-gray-600 mb-2">HTML, CSS, JS, Bootstrap</p>
+              <p class="text-gray-700 mb-4">Online store with product listing, cart, and checkout features.</p>
+              <div class="flex gap-4 text-sm font-medium">
+                <a href="https://ecommerce-p771.github.io/E-Shopper/" class="text-green-600 hover:underline">Live</a>
+                <a href="https://github.com/Ecommerce-p771/E-Shopper" class="text-green-600 hover:underline">GitHub</a>
+              </div>
+            </div>
+      
+            <!-- Fashion Website -->
+            <div class="group relative p-6 bg-white rounded-3xl shadow-xl hover:shadow-2xl transform transition hover:scale-105">
+              <div class="absolute top-0 right-0 p-3">
+                <span class="text-xs font-semibold text-pink-600 bg-pink-100 px-3 py-1 rounded-full">Design</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-pink-600">Fashion Website</h3>
+              <p class="text-sm text-gray-600 mb-2">HTML, CSS, Bootstrap</p>
+              <p class="text-gray-700 mb-4">Showcase of fashion products with modern design.</p>
+              <div class="flex gap-4 text-sm font-medium">
+                <a href="https://ecommerce-p771.github.io/Business-website/" class="text-pink-600 hover:underline">Live</a>
+                <a href="https://github.com/Ecommerce-p771/Business-website" class="text-pink-600 hover:underline">GitHub</a>
+              </div>
+            </div>
+      
+            <!-- Stopwatch -->
+            <div class="group relative p-6 bg-white rounded-3xl shadow-xl hover:shadow-2xl transform transition hover:scale-105">
+              <div class="absolute top-0 right-0 p-3">
+                <span class="text-xs font-semibold text-indigo-600 bg-indigo-100 px-3 py-1 rounded-full">Timer</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-indigo-600">Stopwatch</h3>
+              <p class="text-sm text-gray-600 mb-2">HTML, CSS, JS</p>
+              <p class="text-gray-700 mb-4">Simple stopwatch with start, stop, and reset functionality.</p>
+              <div class="flex gap-4 text-sm font-medium">
+                <a href="https://ecommerce-p771.github.io/Stopwatch/" class="text-indigo-600 hover:underline">Live</a>
+                <a href="https://github.com/Ecommerce-p771/Stopwatch" class="text-indigo-600 hover:underline">GitHub</a>
+              </div>
+            </div>
+      
+            <!-- Quiz App -->
+            <div class="group relative p-6 bg-white rounded-3xl shadow-xl hover:shadow-2xl transform transition hover:scale-105">
+              <div class="absolute top-0 right-0 p-3">
+                <span class="text-xs font-semibold text-orange-600 bg-orange-100 px-3 py-1 rounded-full">Quiz</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-orange-600">Quiz App</h3>
+              <p class="text-sm text-gray-600 mb-2">HTML, CSS, JS</p>
+              <p class="text-gray-700 mb-4">Interactive quiz application with multiple choice questions.</p>
+              <div class="flex gap-4 text-sm font-medium">
+                <a href="https://ecommerce-p771.github.io/Quiz-App/" class="text-orange-600 hover:underline">Live</a>
+                <a href="https://github.com/Ecommerce-p771/Quiz-App" class="text-orange-600 hover:underline">GitHub</a>
+              </div>
+            </div>
+      
+      
+            <!-- Dictionary -->
+            <div class="group relative p-6 bg-white rounded-3xl shadow-xl hover:shadow-2xl transform transition hover:scale-105">
+              <div class="absolute top-0 right-0 p-3">
+                <span class="text-xs font-semibold text-emerald-600 bg-emerald-100 px-3 py-1 rounded-full">Utility</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-emerald-600">Dictionary</h3>
+              <p class="text-sm text-gray-600 mb-2">HTML, CSS, JS</p>
+              <p class="text-gray-700 mb-4">A dictionary app that displays meanings of words.</p>
+              <div class="flex gap-4 text-sm font-medium">
+                <a href="https://ecommerce-p771.github.io/dictionary/" class="text-emerald-600 hover:underline">Live</a>
+                <a href="https://github.com/Ecommerce-p771/dictionary" class="text-emerald-600 hover:underline">GitHub</a>
+              </div>
+            </div>
+      
+            <!-- Calculator -->
+            <div class="group relative p-6 bg-white rounded-3xl shadow-xl hover:shadow-2xl transform transition hover:scale-105">
+              <div class="absolute top-0 right-0 p-3">
+                <span class="text-xs font-semibold text-yellow-600 bg-yellow-100 px-3 py-1 rounded-full">Tool</span>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-yellow-600">Calculator</h3>
+              <p class="text-sm text-gray-600 mb-2">HTML, CSS, JS</p>
+              <p class="text-gray-700 mb-4">A simple calculator for basic arithmetic operations.</p>
+              <div class="flex gap-4 text-sm font-medium">
+                <a href="#" class="https://ecommerce-p771.github.io/calculators/">Live</a>
+                <a href="https://github.com/Ecommerce-p771/calculators" class="text-yellow-600 hover:underline">GitHub</a>
+              </div>
+            </div>
+      
+          
+      
+            <!-- Project Template End -->
+          </div>
+        </div>
+      </section>
+<!-- Creative Resume Section with PDF Preview -->
+<section id="resume" class="py-20 bg-gradient-to-br from-white via-indigo-100 to-teal-100 px-4">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-5xl font-bold text-gray-800 mb-6 hover:text-teal-600 transition duration-300">📄 My Resume</h2>
+    <p class="text-lg text-gray-600 mb-10">Here’s a preview of my resume. You can also download it below.</p>
+
+  
+
+    <!-- Download Button -->
+    <div class="mt-10">
+      <a href="your-pdf-link-here.pdf" download target="_blank"
+         class="inline-block bg-gradient-to-r from-indigo-600 to-teal-500 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:scale-105 transition duration-300">
+        ⬇️ Download Resume
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+     <!-- Contact Section -->
+     <section id="contact" class="container mx-auto py-16 px-6 text-center animate__animated animate__fadeIn animate__delay-5s">
+      <h2 class="text-4xl font-bold">Contact Me</h2>
+      <p class="text-lg mt-4">Feel free to reach out for collaborations or just a chat.</p>
+      <form action="#" class="mt-8 max-w-lg mx-auto">
+          <input type="text" placeholder="Your Name" class="w-full p-3 mb-4 bg-gray-800 rounded-lg" required pattern="[A-Za-z\s]+" title="Only letters allowed">
+          <input type="email" placeholder="Your Email" class="w-full p-3 mb-4 bg-gray-800 rounded-lg" required>
+          <textarea placeholder="Your Message" class="w-full p-3 mb-4 bg-gray-800 rounded-lg" required></textarea>
+          <button type="submit" class="px-6 py-3 bg-yellow-500 text-gray-900 font-semibold rounded-lg hover:bg-yellow-600">Send Message</button>
+      </form>
+      <div class="flex justify-center space-x-6 mt-6">
+          <a href="#" class="text-2xl hover:text-yellow-500"><i class="fab fa-github"></i></a>
+          <a href="#" class="text-2xl hover:text-yellow-500"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="text-2xl hover:text-yellow-500"><i class="fab fa-twitter"></i></a>
+      </div>
+  </section>
+
+<!-- Blog Section (Optional) -->
+<section id="blog" class="py-20 px-4 bg-gradient-to-l from-gray-100 via-teal-50 to-blue-100">
+    <div class="max-w-4xl mx-auto text-center text-gray-800">
+        <h2 class="text-5xl font-extrabold text-gray-900 mb-10 transform transition-all duration-500 hover:text-teal-600">My Blog</h2>
+        <p class="text-xl text-gray-700 mb-8">I write tutorials and articles about web development, offering insights into best practices, tools, and techniques. Stay tuned for upcoming posts!</p>
+        <div class="relative inline-block">
+            <button class="px-8 py-3 bg-teal-600 text-white font-semibold rounded-lg shadow-md transform transition-all duration-300 hover:bg-teal-700 hover:scale-110">
+                <span class="relative z-10">Visit My Blog</span>
+            </button>
+            <div class="absolute inset-0 bg-teal-200 opacity-30 rounded-lg blur-xl"></div>
+        </div>
+        <div class="mt-8">
+            <p class="text-gray-500 text-lg">Coming soon... Stay tuned!</p>
+        </div>
+    </div>
+</section>
+
+
+    <script>
+        // Toggle mobile menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>
