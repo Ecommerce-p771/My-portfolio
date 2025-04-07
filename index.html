@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Navbar</title>
+    <title>Jannat Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         /* Custom styles for navbar links and hover effects */
         .nav-link {
@@ -56,39 +58,69 @@
 <body class="bg-gray-100">
 
    <!-- Navbar -->
-<nav class="bg-gradient-to-r from-red-300 via-blue-300 to-red-600 p-4 shadow-lg">
-  <div class="max-w-7xl mx-auto flex items-center justify-between">
+   <nav class="bg-gradient-to-r from-red-500 via-gray-400 to-red-300 p-4 shadow-xl fixed w-full z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
       <!-- Logo -->
-      <div class="text-white text-2xl font-bold navbar-logo">
-          <a href="#">Jannat</a>
+      <div class="text-white text-3xl font-extrabold tracking-wide navbar-logo">
+        <a href="#" class="hover:text-yellow-200 transition duration-300">Jannat</a>
       </div>
-
-      <!-- Navbar Links (Middle part) -->
-      <div class="hidden lg:flex space-x-6 text-lg font-medium">
-          <a href="#" class="text-white hover:text-teal-200 transition duration-300 nav-link">Home</a>
-          <a href="#" class="text-white hover:text-teal-200 transition duration-300 nav-link">About</a>
-          <a href="#" class="text-white hover:text-teal-200 transition duration-300 nav-link">Services</a>
-          <a href="#" class="text-white hover:text-teal-200 transition duration-300 nav-link">Contact</a>
+  
+      <!-- Navbar Links -->
+      <div class="hidden lg:flex items-center space-x-8 text-lg font-semibold">
+        <a href="#" class="text-white hover:text-yellow-300 hover:scale-105 transition duration-300">Home</a>
+        <a href="#about" class="text-white hover:text-yellow-300 hover:scale-105 transition duration-300">About</a>
+        <a href="#services" class="text-white hover:text-yellow-300 hover:scale-105 transition duration-300">Services</a>
+        <a href="#contact" class="text-white hover:text-yellow-300 hover:scale-105 transition duration-300">Contact</a>
       </div>
-
-      <!-- Portfolio Section (Right part) -->
-      <div class="hidden lg:block text-white">
-          <a href="#portfolio" class="text-lg font-medium hover:text-teal-200 transition duration-300">Portfolio</a>
+  
+      <!-- Portfolio Button -->
+      <div class="hidden lg:block">
+        <a href="#portfolio"
+          class="bg-white text-indigo-700 px-4 py-2 rounded-full text-md font-semibold shadow-md hover:bg-yellow-200 transition duration-300">Portfolio</a>
       </div>
-
+  
       <!-- Mobile Menu Button -->
-      <div class="block lg:hidden">
-          <button id="menu-toggle" class="text-white focus:outline-none">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                  class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
-          </button>
+      <div class="lg:hidden">
+        <button id="menu-toggle" class="text-white focus:outline-none hover:scale-110 transition duration-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
       </div>
-  </div>
-</nav>
-
+    </div>
+  
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="lg:hidden hidden flex-col bg-white text-indigo-700 px-6 py-4 space-y-4 text-lg font-semibold">
+      <a href="#" class="hover:text-indigo-500">Home</a>
+      <a href="#about" class="hover:text-indigo-500">About</a>
+      <a href="#services" class="hover:text-indigo-500">Services</a>
+      <a href="#contact" class="hover:text-indigo-500">Contact</a>
+      <a href="#portfolio" class="hover:text-indigo-500">Portfolio</a>
+    </div>
+  </nav>
+  
+  <script>
+    // Toggle mobile menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+  
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+  
+  
+  <script>
+    // Toggle mobile menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+  
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+  
 
     <!-- Mobile Menu -->
     <div id="mobile-menu"
@@ -105,17 +137,21 @@
     <section id="about" class="py-24 bg-black text-white relative z-10">
       <div class="max-w-screen-xl mx-auto px-6 sm:px-12 lg:px-24 flex flex-col lg:flex-row items-center gap-16">
     
-        <!-- Left Side: Image with Modern Sharp Frame -->
-        <div class="w-full lg:w-1/2 flex justify-center lg:justify-start pr-2 lg:pr-12">
-          <div class="relative w-[320px] h-[420px] group perspective">
-            <!-- Unique Geometric Frame -->
-            <div class="clip-unique-frame p-[5px] animate-pulse">
-              <div class="overflow-hidden bg-white">
-                <img src="c:\Users\WALTON\Desktop\images 7777.jpg" alt="Your photo" class="w-full h-full object-cover transform transition duration-500 group-hover:scale-105">
-              </div>
-            </div>
-          </div>
+  <!-- Left Side: Image with Modern Sharp Frame -->
+  <div class="w-full lg:w-1/2 flex justify-center lg:justify-start pr-2 lg:pr-12">
+    <div class="relative w-[320px] h-[420px] group perspective">
+      <!-- Unique Geometric Frame -->
+      <div class="clip-unique-frame p-[5px] animate-pulse">
+        <div class="overflow-hidden bg-white">
+          <img src="c:\Users\WALTON\Desktop\images 7777.jpg" alt="Your photo" class="w-full h-full object-cover transform transition duration-500 group-hover:scale-105">
         </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
     
         <!-- Right Side: Text Content -->
         <div class="w-full lg:w-1/2 flex flex-col justify-center items-start italic pl-2 lg:pl-6">
@@ -170,8 +206,13 @@
 </section>
   <!-- Skills Section -->
 <section id="skills" class="py-20 bg-gradient-to-r from-gray-500 via-gray-600 to-black text-white text-center">
-  <h2 class="text-4xl font-bold text-yellow-300 mb-6">Skills</h2>
-
+  <div class="relative inline-block px-8 py-4 rounded-full bg-yellow-300 shadow-xl border-2 border-yellow-400 mb-10">
+    <div class="absolute -inset-1 bg-gradient-to-r from-yellow-300 via-pink-400 to-purple-500 rounded-full blur-lg opacity-60 -z-10"></div>
+    <h2 class="relative text-4xl font-extrabold text-gray-900 uppercase tracking-wider z-10">Skills</h2>
+  </div>
+  
+  
+  
   <div class="max-w-4xl mx-auto">
 
       <!-- Frontend Development -->
@@ -342,10 +383,16 @@
       </div>
   </div>
 </section>
-<section id="projects" class="py-20 bg-gradient-to-br from-gray-800 via-green-300 to-teal-700 px-4">
+<section id="projects" class="py-20 bg-gradient-to-br from-red-300 via-blue-300 to-orange-600 px-4">
   <div class="max-w-7xl mx-auto">
-    <h2 class="text-5xl font-bold text-center text-white mb-16 hover:text-teal-400 transition duration-300">My Projects</h2>
-
+    <div class="flex justify-center text-center mb-10">
+      <div class="relative inline-block px-10 py-5 rounded-full bg-gradient-to-r from-yellow-300 via-pink-400 to-purple-500 shadow-xl">
+        <h2 class="relative text-4xl font-extrabold text-white uppercase tracking-widest z-10">My Projects</h2>
+        <div class="absolute -inset-1 blur-lg bg-gradient-to-r from-yellow-400 via-pink-300 to-purple-500 opacity-60 rounded-full -z-10"></div>
+      </div>
+    </div>
+    
+    
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
       <!-- Project Template Start -->
       <!-- Just copy & change content below for each project -->
@@ -361,8 +408,8 @@
         <p class="text-sm text-gray-600 mb-2">HTML, CSS, JS</p>
         <p class="text-gray-700 mb-4">Task management app for productivity.</p>
         <div class="flex gap-4 text-sm font-medium">
-          <a href="#" class="text-purple-600 hover:underline">Live</a>
-          <a href="#" class="text-purple-600 hover:underline">GitHub</a>
+          <a href="https://ecommerce-p771.github.io/To-Do-list/" class="text-purple-600 hover:underline">Live</a>
+          <a href="https://github.com/Ecommerce-p771/To-Do-list" class="text-purple-600 hover:underline">GitHub</a>
         </div>
       </div>
 
@@ -375,8 +422,8 @@
         <p class="text-sm text-gray-600 mb-2">HTML, CSS, JS</p>
         <p class="text-gray-700 mb-4">Video streaming site clone with basic functionality.</p>
         <div class="flex gap-4 text-sm font-medium">
-          <a href="#" class="text-red-600 hover:underline">Live</a>
-          <a href="#" class="text-red-600 hover:underline">GitHub</a>
+          <a href="https://ecommerce-p771.github.io/Project2/" class="text-red-600 hover:underline">Live</a>
+          <a href="https://github.com/Ecommerce-p771/Project2" class="text-red-600 hover:underline">GitHub</a>
         </div>
       </div>
 
@@ -389,8 +436,8 @@
         <p class="text-sm text-gray-600 mb-2">HTML, CSS, JS</p>
         <p class="text-gray-700 mb-4">Social media platform clone with user authentication.</p>
         <div class="flex gap-4 text-sm font-medium">
-          <a href="#" class="text-blue-500 hover:underline">Live</a>
-          <a href="#" class="text-blue-500 hover:underline">GitHub</a>
+          <a href="https://ecommerce-p771.github.io/projkect-1/" class="text-blue-500 hover:underline">Live</a>
+          <a href="https://github.com/Ecommerce-p771/projkect-1" class="text-blue-500 hover:underline">GitHub</a>
         </div>
       </div>
 
@@ -431,8 +478,8 @@
         <p class="text-sm text-gray-600 mb-2">HTML, CSS, JS</p>
         <p class="text-gray-700 mb-4">Simple stopwatch with start, stop, and reset functionality.</p>
         <div class="flex gap-4 text-sm font-medium">
-          <a href="#" class="text-indigo-600 hover:underline">Live</a>
-          <a href="#" class="text-indigo-600 hover:underline">GitHub</a>
+          <a href="https://ecommerce-p771.github.io/Stopwatch/" class="text-indigo-600 hover:underline">Live</a>
+          <a href="https://github.com/Ecommerce-p771/Stopwatch" class="text-indigo-600 hover:underline">GitHub</a>
         </div>
       </div>
 
@@ -445,8 +492,8 @@
         <p class="text-sm text-gray-600 mb-2">HTML, CSS, JS</p>
         <p class="text-gray-700 mb-4">Interactive quiz application with multiple choice questions.</p>
         <div class="flex gap-4 text-sm font-medium">
-          <a href="#" class="text-orange-600 hover:underline">Live</a>
-          <a href="#" class="text-orange-600 hover:underline">GitHub</a>
+          <a href="https://ecommerce-p771.github.io/Quiz-App/" class="text-orange-600 hover:underline">Live</a>
+          <a href="https://github.com/Ecommerce-p771/Quiz-App" class="text-orange-600 hover:underline">GitHub</a>
         </div>
       </div>
 
@@ -459,8 +506,8 @@
         <p class="text-sm text-gray-600 mb-2">HTML, CSS, JS</p>
         <p class="text-gray-700 mb-4">Convert temperatures between Celsius, Fahrenheit, and Kelvin.</p>
         <div class="flex gap-4 text-sm font-medium">
-          <a href="#" class="text-teal-600 hover:underline">Live</a>
-          <a href="#" class="text-teal-600 hover:underline">GitHub</a>
+          <a href="https://ecommerce-p771.github.io/Weather-converted/" class="text-teal-600 hover:underline">Live</a>
+          <a href="https://github.com/Ecommerce-p771/Weather-converted" class="text-teal-600 hover:underline">GitHub</a>
         </div>
       </div>
 
@@ -473,8 +520,8 @@
         <p class="text-sm text-gray-600 mb-2">HTML, CSS, JS</p>
         <p class="text-gray-700 mb-4">A dictionary app that displays meanings of words.</p>
         <div class="flex gap-4 text-sm font-medium">
-          <a href="#" class="text-emerald-600 hover:underline">Live</a>
-          <a href="#" class="text-emerald-600 hover:underline">GitHub</a>
+          <a href="https://ecommerce-p771.github.io/dictionary/" class="text-emerald-600 hover:underline">Live</a>
+          <a href="https://github.com/Ecommerce-p771/dictionary" class="text-emerald-600 hover:underline">GitHub</a>
         </div>
       </div>
 
@@ -487,8 +534,8 @@
         <p class="text-sm text-gray-600 mb-2">HTML, CSS, JS</p>
         <p class="text-gray-700 mb-4">A simple calculator for basic arithmetic operations.</p>
         <div class="flex gap-4 text-sm font-medium">
-          <a href="#" class="text-yellow-600 hover:underline">Live</a>
-          <a href="#" class="text-yellow-600 hover:underline">GitHub</a>
+          <a href="https://ecommerce-p771.github.io/calculators/" class="text-yellow-600 hover:underline">Live</a>
+          <a href="https://github.com/Ecommerce-p771/calculators" class="text-yellow-600 hover:underline">GitHub</a>
         </div>
       </div>
 
@@ -504,10 +551,10 @@
 
 
 
-    <section id="resume" class="py-20 bg-gray-300 text-white px-4">
+    <section id="resume" class="py-20 bg-black text-white px-4">
   <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-5xl font-bold text-red-700 mb-6 hover:text-gray-500 transition duration-300">📄 My Resume</h2>
-    <p class="text-lg text-green-500 mb-10 leading-relaxed max-w-3xl mx-auto">
+    <h2 class="text-5xl font-bold text-red-700 mb-6 hover:text-blue-500 transition duration-300">📄 My Resume</h2>
+    <p class="text-lg text-red-500 mb-10 leading-relaxed max-w-3xl mx-auto">
       Here’s a preview of my resume. Feel free to download it below for more details about my experiences and skills.
     </p>
 
@@ -536,10 +583,21 @@
           <button type="submit" class="px-6 py-3 bg-yellow-500 text-gray-900 font-semibold rounded-lg hover:bg-yellow-600">Send Message</button>
       </form>
       <div class="flex justify-center space-x-6 mt-6">
-          <a href="#" class="text-2xl hover:text-yellow-500"><i class="fab fa-github"></i></a>
-          <a href="#" class="text-2xl hover:text-yellow-500"><i class="fab fa-linkedin"></i></a>
-          <a href="#" class="text-2xl hover:text-yellow-500"><i class="fab fa-twitter"></i></a>
+        <a href="https://github.com/Ecommerce-p771" target="_blank" class="text-2xl text-white bg-gray-900 p-3 rounded-full hover:bg-yellow-500 transition">
+          <i class="fab fa-github"></i>
+        </a>
+      
+        <a href="https://www.linkedin.com/feed/" target="_blank" class="text-2xl text-white bg-blue-700 p-3 rounded-full hover:bg-yellow-500 transition">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      
+        <a href="https://www.fiverr.com/" target="_blank" class="bg-green-600 p-3 rounded-full hover:bg-yellow-500 transition">
+          <img src="./download4555.png"
+               alt="Fiverr" class="h-6 w-6 invert" />
+        </a>
       </div>
+      
+      
   </section>
 
 <!-- Blog Section (Optional) -->
